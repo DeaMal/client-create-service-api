@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: Client Create Service API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: server
+paths:
+  /client/create:
+    post:
+      summary: Create a new client
+      operationId: demo
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientCreateRequest'
+      responses:
+        '200':
+          description: Successful client creation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientCreateResponse'
+        '400':
+          description: Invalid client creation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      $ref: '../java/shop/household/client_create_service_api/error/Error.json'
+    ClientCreateRequest:
+      $ref: '../java/shop/household/client_create_service_api/request/ClientCreateRequest.json'
+    ClientCreateResponse:
+      $ref: '../java/shop/household/client_create_service_api/response/ClientCreateResponse.json'
