@@ -40,6 +40,11 @@
 			<artifactId>jackson-databind-nullable</artifactId>
 			<version>0.2.6</version>
 		</dependency>
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -60,9 +65,11 @@
 							<output>${project.build.directory}/generated-sources</output>
 							<apiPackage>shop.household.api</apiPackage>
 							<modelPackage>shop.household.model</modelPackage>
+							<modelNameSuffix>Dto</modelNameSuffix>
 							<configOptions>
 								<dateLibrary>java8</dateLibrary>
 								<library>resttemplate</library>
+								<useBeanValidation>true</useBeanValidation>
 								<generateBuilders>true</generateBuilders>
 								<useJakartaEe>true</useJakartaEe>
 								<useLombok>true</useLombok>
