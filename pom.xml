@@ -45,6 +45,11 @@
 			<artifactId>jakarta.validation-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>8.0.1.Final</version>
+        </dependency>
 	</dependencies>
 
 	<build>
@@ -69,10 +74,14 @@
 							<configOptions>
 								<dateLibrary>java8</dateLibrary>
 								<library>resttemplate</library>
+								<performBeanValidation>true</performBeanValidation>
 								<useBeanValidation>true</useBeanValidation>
 								<generateBuilders>true</generateBuilders>
 								<useJakartaEe>true</useJakartaEe>
 								<useLombok>true</useLombok>
+								<additionalModelTypeAnnotations>
+									@com.fasterxml.jackson.annotation.JsonInclude(com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL)
+								</additionalModelTypeAnnotations>
 							</configOptions>
 						</configuration>
 					</execution>
