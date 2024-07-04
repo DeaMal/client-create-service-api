@@ -32,6 +32,14 @@
     "address": {
       "type": "string",
       "maxLength": 200
+    },
+    "create_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 1000
     }
   },
   "required": [

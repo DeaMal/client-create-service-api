@@ -65,6 +65,12 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
+							<typeMappings>
+								<typeMapping>OffsetDateTime=Timestamp</typeMapping>
+							</typeMappings>
+							<importMappings>
+								<importMapping>java.time.OffsetDateTime=java.sql.Timestamp</importMapping>
+							</importMappings>
 							<inputSpec>${project.basedir}/src/main/resources/schema.yaml</inputSpec>
 							<generatorName>java</generatorName>
 							<output>${project.build.directory}/generated-sources</output>
