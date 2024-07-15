@@ -24,7 +24,7 @@
     "email": {
       "type": "string",
       "format": "email",
-      "pattern": "^[\\w-.]+@([\\w-]+.)+[\\w-]{2,4}$",
+      "pattern": "^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
       "maxLength": 40
     },
     "address": {
